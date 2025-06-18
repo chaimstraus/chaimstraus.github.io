@@ -1,8 +1,6 @@
 <style>
 body {
   background-image: url("background.png");
-  
-  background-size: cover;
 }
 </style>
 
