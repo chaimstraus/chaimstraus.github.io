@@ -1,6 +1,6 @@
 <style>
 body {
-  background-image: url("background.jpg");
+  background-image: url("background.png");
   
   background-size: cover;
 }
