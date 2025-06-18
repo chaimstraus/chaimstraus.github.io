@@ -1,7 +1,7 @@
 <style>
 body {
-  background-image: url("image.jpg");
-  background-repeat: no-repeat;
+  background-image: url("background.jpg");
+  
   background-size: cover;
 }
 </style>
