@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Psychometric Score Calculator</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         body { font-family: sans-serif; max-width: 700px; margin: 20px auto; padding: 20px; line-height: 1.6; background-color: #f0f2f5; }
         .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
@@ -86,8 +85,6 @@
             Verbal Oriented: <br><span id="res_hum" class="score-val"></span>
             <span id="perc_hum" class="percentile-text"></span>
         </div>
-
-        <button onclick="exportToPDF()" class="export-btn">Download Scores as PDF</button>
     </div>
 </div>
 
@@ -199,20 +196,6 @@
 
         document.getElementById('selection-log').innerText = `Used Raw Totals: Quantitative ${qRaw}, Verbal ${vRaw}, English ${eRaw}`;
         document.getElementById('results').style.display = 'block';
-    }
-
-    function exportToPDF() {
-        const element = document.getElementById('results');
-        const opt = {
-            margin:       10,
-            filename:     'Psychometric_Scores_Estimate.pdf',
-            image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 2 },
-            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-        };
-
-        // New Promise-based usage:
-        html2pdf().set(opt).from(element).save();
     }
 </script>
 </body>
