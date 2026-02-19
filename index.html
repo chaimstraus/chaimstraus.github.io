@@ -71,7 +71,7 @@
 
     <button onclick="calculateRandomized()">Calculate Estimated Score Range</button>
 
-    <div id="results" class="results">
+    <div id="results" class="results" >
         <h3>Psychometry Test Results</h3>
         <p class="logic-note" id="selection-log"></p>
         <div class="score-box">
@@ -202,7 +202,7 @@
     }
 
     function exportToPDF() {
-        const element = document.getElementById('main-content');
+        const element = document.getElementById('results');
         const opt = {
             margin:       10,
             filename:     'Psychometric_Scores_Estimate.pdf',
