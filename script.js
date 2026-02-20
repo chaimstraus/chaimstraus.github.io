@@ -31,8 +31,6 @@ async function initializeData() {
                     if (row.qTable !== null) qTable_data[i] = row.qTable;
                     if (row.eTable !== null) eTable_data[i] = row.eTable;
                 });
-                console.log("Tables populated!");
-                console.log(vTable);
             });
 
         return { vTable_data, qTable_data, eTable_data }; // return our table data to the initializer, which will set them as global
