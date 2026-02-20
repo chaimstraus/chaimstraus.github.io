@@ -26,10 +26,11 @@ async function initializeData() {
         // there are 3 different data types - math, verbal, and english, but they each scale the same
         data.forEach(row => {
             const i = row.index;
-            if (row.vTable_data !== null) vTable_data[i] = row.vTable_data;
-            if (row.qTable_data !== null) qTable_data[i] = row.qTable_data;
-            if (row.eTable_data !== null) eTable_data[i] = row.eTable_data;
+            if (row.vTable !== null) vTable_data[i] = row.vTable;
+            if (row.qTable !== null) qTable_data[i] = row.qTable;
+            if (row.eTable !== null) eTable_data[i] = row.eTable;
         });
+
         return { vTable_data, qTable_data, eTable_data }; // return our table data to the initializer, which will set them as global
     } catch (error) {
         console.error("Error loading data file:", error); // shouldn't happen, but just in case
