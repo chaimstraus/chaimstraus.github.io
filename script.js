@@ -14,22 +14,26 @@ document.addEventListener('DOMContentLoaded', async function() {
 // load and read JSON data
 async function initializeData() {
     try {
-        // load the file
-        const response = await fetch('raw_to_scaled_data.json'); 
-        const data = await response.json();
-        
         // initialize the data variables that we'll store json data in
         const vTable_data = {};
         const qTable_data = {};
         const eTable_data = {};
+        let data = [];
 
-        // there are 3 different data types - math, verbal, and english, but they each scale the same
-        data.forEach(row => {
-            const i = row.index;
-            if (row.vTable !== null) vTable_data[i] = row.vTable;
-            if (row.qTable !== null) qTable_data[i] = row.qTable;
-            if (row.eTable !== null) eTable_data[i] = row.eTable;
-        });
+        // load the file
+
+        fetch('raw_to_scaled_data.json')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(row => { // there are 3 different data types - math, verbal, and english, but they each scale the same
+                    const i = row.index;
+                    if (row.vTable !== null) vTable_data[i] = row.vTable;
+                    if (row.qTable !== null) qTable_data[i] = row.qTable;
+                    if (row.eTable !== null) eTable_data[i] = row.eTable;
+                });
+                console.log("Tables populated!");
+                console.log(vTable);
+            });
 
         return { vTable_data, qTable_data, eTable_data }; // return our table data to the initializer, which will set them as global
     } catch (error) {
