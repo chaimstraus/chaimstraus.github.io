@@ -115,18 +115,18 @@ function calculateRandomized() {
     const eStd = eTable[eRaw] || 50;
 
     const multi = (2*vStd + 2*qStd + eStd) / 5;
-    const hum = (3*vStd + qStd + eStd) / 5;
+    const verb = (3*vStd + qStd + eStd) / 5;
     const sci = (3*qStd + vStd + eStd) / 5;
 
     const rMulti = getRange(multi);
-    const rHum = getRange(hum);
+    const rVerb = getRange(verb);
     const rSci = getRange(sci);
     
     document.getElementById('res_multi').innerText = rMulti;
     document.getElementById('perc_multi').innerText = getPercentile(rMulti);
     
-    document.getElementById('res_hum').innerText = rHum;
-    document.getElementById('perc_hum').innerText = getPercentile(rHum);
+    document.getElementById('res_verb').innerText = rVerb;
+    document.getElementById('perc_verb').innerText = getPercentile(rVerb);
     
     document.getElementById('res_sci').innerText = rSci;
     document.getElementById('perc_sci').innerText = getPercentile(rSci);
